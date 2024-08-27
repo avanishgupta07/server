@@ -1,6 +1,6 @@
 import File from '../models/file.js';
-import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
+const bcrypt = require('bcryptjs');
 
 dotenv.config();
 
