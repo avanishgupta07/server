@@ -10,7 +10,6 @@ export const uploadImage = async (request, response) => {
         path: request.file.path,
         name: request.file.originalname,
     }
-    
     try {
         const file = await File.create(fileObj);
         response.status(200).json({ path: `http://localhost:${process.env.PORT}/file/${file._id}`});
@@ -19,7 +18,6 @@ export const uploadImage = async (request, response) => {
         response.status(500).json({ error: error.message });
     }
 }
-
 export const getImage = async (request, response) => {
     try {   
         const file = await File.findById(request.params.fileId);
